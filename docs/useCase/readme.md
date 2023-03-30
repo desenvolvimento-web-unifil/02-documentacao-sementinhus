@@ -1,10 +1,21 @@
 ```mermaid
+flowchart LR
+    
+    User --> Escolher_Jogo
+        Escolher_Jogo -.extends.- Iniciar_Jogo
+        Escolher_Jogo -.extends.- Consultar_Resultado
+    User --> Realizar_Transação
+        Realizar_Transação -.extends.- Depositar
+        Realizar_Transação -.extends.- Sacar
+    User --> Valor_Aposta
+    User --> Consultar_Historico
+    
 
-journey
-    title Jornada do Usuário em um Site de Apostas
-
-    section Identificação
-        Login: 5: Sistema, Usuário
-        Verificação de Conta: 5
-        Pagina Principal: O sistema verifica a conta do usuário e o redireciona para a página principal.
+    Manager ----> User
+    Manager ---> Gerenciar_Transações
+    Manager ---> Gerenciar_Valor
+    Manager ---> Gerenciar_Contas
+    Manager ---> Gerenciar_Jogos
+    Manager ---> Gerenciar_Aposta
+    
 ```
