@@ -27,7 +27,7 @@ tooling:
       cmd: npm run dev -- --host
     prod:
       service: node
-      cmd: npm run build
+      cmd: npm run prod
     npm-install:
       service: node
       cmd: npm install
