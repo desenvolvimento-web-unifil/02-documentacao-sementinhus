@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\RouletteBet;
+use Illuminate\Http\Request;
 
 class RouletteController extends Controller
 {
@@ -19,7 +19,7 @@ class RouletteController extends Controller
             'valor' => 'required|numeric|min:0',
         ]);
 
-        $aposta = new RouletteBet;
+        $aposta = new RouletteBet();
         $aposta->cor = $request->cor;
         $aposta->valor = $request->valor;
         $aposta->save();
