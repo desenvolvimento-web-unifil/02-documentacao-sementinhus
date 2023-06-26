@@ -8,8 +8,7 @@
 - Ruy Miguel Penha Rodrigues 
 
 ## Sobre nós: 
-Alunos do curso de Engenharia de Software da UniFil
----
+Somos alunos do 3 ano do curso de Engenharia de Software da UniFil.
 
 # Instalação
 
