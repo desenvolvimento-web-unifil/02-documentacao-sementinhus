@@ -10,6 +10,8 @@
             <form method="POST" action="{{ route('roulette.store') }}">
                 @csrf
 
+                <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+
                 <div class="mb-6">
                     <label for="cor" class="text-lg font-medium text-gray-800 dark:text-gray-200">Cor:</label>
                     <select name="cor" id="cor" class="mt-2 p-2 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
