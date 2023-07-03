@@ -14,20 +14,15 @@ class RouletteController extends Controller
 
     public function store(Request $request)
     {
-           // Lógica para verificar o número sorteado
-    $numeroSorteado = mt_rand(0, 36); // Gera um número aleatório entre 0 e 36
+        $request->validate([
+            'cor' => 'required',
+            'valor' => 'required|numeric|min:0',
+        ]);
+        $aposta = new RouletteBet();
+        $aposta->cor = $request->cor;
+        $aposta->valor = $request->valor;
+        $aposta->save();
 
-    $numeroEscolhido = $request->input('numero');
-
-    if ($numeroEscolhido == $numeroSorteado) {
-        // O usuário ganhou a aposta
-        // Atualize a pontuação do usuário, registre a aposta vencedora, etc.
-        $mensagem = "Parabéns! Você acertou o número sorteado.";
-    } else {
-        // O usuário perdeu a aposta
-        $mensagem = "Que pena! Você não acertou o número sorteado.";
-    }
-
-    return view('roleta.resultado', compact('mensagem', 'numeroSorteado'));
+        return redirect()->back()->with('success', 'Aposta realizada com sucesso!');
     }
 }
